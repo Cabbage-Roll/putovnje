@@ -1,0 +1,77 @@
+#include <iostream>
+#include "dinstring.hpp"
+#include "list.hpp"
+
+using namespace std;
+
+class Karta{
+private:
+    DinString mestopolaska;
+    DinString mestodolaska;
+    float duzinaputovanja;
+    float cenakarte;
+    int id;
+
+public:
+    Karta(){
+        mestopolaska="Novi Sad";
+        mestodolaska="Beograd";
+        duzinaputovanja=0;
+        cenakarte=0;
+        id=0;
+    }
+
+    Karta(DinString a, DinString b, float c, float d, int e){
+        mestopolaska=a;
+        mestodolaska=b;
+        duzinaputovanja=0;
+        if(c>0)
+            duzinaputovanja=c;
+        cenakarte=0;
+        if(d>0)
+            cenakarte=d;
+        e=id;
+    }
+
+    virtual bool jeftinaKarta(){
+        if(cenakarte>10)
+            return false;
+        return true;
+    }
+
+    DinString getMestopolaska(){
+        return mestopolaska;
+    }
+
+    DinString getMestodolaska(){
+        return mestodolaska;
+    }
+
+    float getDuzinaputovanja(){
+        return duzinaputovanja;
+    }
+
+    float getCenakarte(){
+        return cenakarte;
+    }
+
+    int getId(){
+        return id;
+    }
+};
+
+class AvionskaKarta{
+private:
+    DinString nazivputovanja;
+    int maxcena;
+    List<AvionskaKarta> listakarti;
+public:
+    
+
+};
+
+int main()
+{
+    cout << "Hello world!" << endl;
+    return 0;
+}
