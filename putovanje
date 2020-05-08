@@ -65,9 +65,43 @@ private:
     DinString nazivputovanja;
     int maxcena;
     List<AvionskaKarta> listakarti;
-public:
-    
 
+public:
+    AvionskaKarta(){
+        nazivputovanja="Primer";
+        maxcena=1000;
+    }
+
+    AvionskaKarta(DinString a, int b){
+        nazivputovanja=a;
+        maxcena=0;
+        if(b>0)
+            maxcena=b;
+    }
+
+    DinString getNazivputovanja(){
+        return nazivputovanja;
+    }
+
+    int getMaxcena(){
+        return maxcena;
+    }
+
+    bool dodajKartu(AvionskaKarta &p){
+        listakarti.add(1,p);
+    }
+
+    bool izbaciKartu(int a){
+        listakarti.remove(a);
+    }
+
+    void ispisi(){
+        cout<<maxcena<<endl;
+        cout<<nazivputovanja<<endl;
+        if(bool jeftinaKarta()){
+        cout<<"test"<<endl;
+        }
+    }
 };
 
 int main()
